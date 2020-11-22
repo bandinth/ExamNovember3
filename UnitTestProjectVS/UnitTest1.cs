@@ -8,11 +8,11 @@ namespace UnitTestProjectVS
     public class UnitTest1
     {
         [TestMethod]
-        public void Add1_Task()
+        public void Add1_Task(Task.Task task)
         {
             Task.Tasks tasks = new Tasks();
 
-            Task.Task task = new Task.Task(1, "Task1", "Desc", new DateTime(2020, 11, 19), new DateTime(2020, 11, 20), State.Open);
+             task = new Task.Task(1, "Task1", "Desc", new DateTime(2020, 11, 19), new DateTime(2020, 11, 20), State.Open);
 
             tasks.AddTask(task);
 
