@@ -20,9 +20,7 @@ namespace ExamNovember3
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            Task.Tasks tasks = new Task.Tasks();
-            tasks.AddTask();
-            listBox1.Items.Add()
+           
         }
     }
 }
