@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ExamNovember3
 {
     public partial class Form1 : Form
@@ -15,6 +16,13 @@ namespace ExamNovember3
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            Task.Tasks tasks = new Task.Tasks();
+            tasks.AddTask();
+            listBox1.Items.Add()
         }
     }
 }
