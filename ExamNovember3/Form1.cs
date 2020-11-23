@@ -21,12 +21,17 @@ namespace ExamNovember3
 
        
 
-        
+        /*!
+         *
+         *Виконується Десеріалізація xml файла для listbox! 
+         * 
+         */
 
         public Form1()
         {
             InitializeComponent();
-           
+          
+
             Task.Tasks tasks = DesirializeXML();
             foreach (Task.TaskT item in tasks.taskList)
             {
@@ -34,10 +39,17 @@ namespace ExamNovember3
             }
             
         }
+      
         public void Add(TaskT task)
         {
 
         }
+        /*!
+       * 
+       * 
+       * Метод Десеріалізації!
+       * 
+       */
         public Task.Tasks DesirializeXML()
         {
             XmlSerializer xml = new XmlSerializer(typeof(Task.Tasks));
@@ -47,6 +59,12 @@ namespace ExamNovember3
                 return tasks;
             }
         }
+        /*!
+      * 
+      * 
+      * Метод Cереалізації!
+      * 
+      */
         public void SerializeXMl(Task.Tasks tasks)
         {
             XmlSerializer xml = new XmlSerializer(typeof(Task.Tasks));
@@ -56,6 +74,13 @@ namespace ExamNovember3
             }
             
         }
+        /*!
+     * 
+     * 
+     * Метод для кнопки який при натисканні добавляє елемент в listbox!
+     * 
+     * 
+     */
         private void buttonAdd_Click(object sender, EventArgs e)
         {
 
@@ -74,7 +99,13 @@ namespace ExamNovember3
             SerializeXMl(tasks);
 
         }
-      
+        /*!
+   * 
+   * 
+   * Метод для кнопки який при натисканні виводить усі елементи в listbox!
+   * 
+   * 
+   */
         private void button1_Click(object sender, EventArgs e)
         {
             Task.Tasks tasks = new Tasks();
@@ -84,7 +115,13 @@ namespace ExamNovember3
                 
             }
         }
-
+        /*!
+* 
+* 
+* Метод для кнопки який при натисканні видаляє вибраний елемент з listbox!
+* 
+* 
+*/
         private void buttonRemove_Click(object sender, EventArgs e)
         {
             int del = this.listBox1.SelectedIndex;
@@ -92,7 +129,13 @@ namespace ExamNovember3
             
           
         }
-
+        /*!
+* 
+* 
+* Метод для кнопки який при натисканні редагує вибраний елемент з listbox!
+* 
+* 
+*/
         private void buttonEdit_Click(object sender, EventArgs e)
         {
 
