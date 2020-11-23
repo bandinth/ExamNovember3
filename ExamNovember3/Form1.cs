@@ -21,17 +21,18 @@ namespace ExamNovember3
 
        
 
-        public delegate void MyDelegate(object data);
+        
 
         public Form1()
         {
             InitializeComponent();
-            
+           
             Task.Tasks tasks = DesirializeXML();
             foreach (Task.TaskT item in tasks.taskList)
             {
                 listBox1.Items.Add(item);
             }
+            
         }
         public void Add(TaskT task)
         {
@@ -86,17 +87,19 @@ namespace ExamNovember3
 
         private void buttonRemove_Click(object sender, EventArgs e)
         {
-           
+            int del = this.listBox1.SelectedIndex;
+            this.listBox1.Items.RemoveAt(del);
             
-            Task.Tasks tasks = new Tasks();
-            tasks.taskList.Remove(new TaskT(Convert.ToInt32(textBox1.Text), textBox2.Text, textBox3.Text, new DateTime(Convert.ToInt32(textBox4.Text), Convert.ToInt32(textBox5.Text), Convert.ToInt32(textBox6.Text)),
-                new DateTime(Convert.ToInt32(textBox7.Text), Convert.ToInt32(textBox8.Text), Convert.ToInt32(textBox9.Text)), State.Open));
-            foreach(var item in tasks.taskList)
-            {
-                listBox1.Items.Remove(item);
-            }
+          
         }
 
-        
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+
+            //Task.Tasks tasks = new Tasks();
+            //tasks.Edit();
+
+
+        }
     }
 }
